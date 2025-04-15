@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер</title>
+</head>
+<body>
+    <button id="startTimer">Запустить таймер</button>
+    <p id="timerDisplay">0</p>
+
+    <script>
+        document.getElementById('startTimer').addEventListener('click', function() {
+            let counter = 0;
+            const timerDisplay = document.getElementById('timerDisplay');
+            const interval = setInterval(function() {
+                timerDisplay.textContent = counter;
+                counter++;
+
+                if (counter > 10) {
+                    clearInterval(interval);
+                    alert('Время вышло!');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
